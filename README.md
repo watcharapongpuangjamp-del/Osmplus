@@ -1,11 +1,20 @@
-<div align="center">
+# Smart OSM (Public Health Volunteer Management)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Modern Android application for Population Registration, Household Management, and NCDs Health Screening.
 
-  <h1>Built with AI Studio</h2>
+## Features
+- **Identity First:** Secure identity management for Households and Persons using UUIDs.
+- **Offline First:** Full functionality without internet using Room Database.
+- **Secure Sync:** Bi-directional sync with Cloud Firestore.
+- **Advanced GIS:** 100m Epidemic Buffer and Optimized Visit Routes.
+- **Health AI:** Local AI-powered health advice for NCDs screening.
+- **Privacy:** Database encryption (SQLCipher), PIN Lock with Lockout, and data anonymization for AI.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Security
+- Data encrypted at rest (SQLCipher).
+- PIN hashing and lockout mechanism.
+- Android Keystore for sensitive credentials.
+- Strict Firestore security rules (Village-level isolation).
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+## License
+MIT License - Copyright (c) 2024
