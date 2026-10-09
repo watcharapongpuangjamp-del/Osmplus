@@ -44,6 +44,7 @@ import com.example.data.Person
 import com.example.data.PersonStatus
 import com.example.ui.theme.*
 import com.example.viewmodel.PersonViewModel
+import com.example.util.PiiMasker
 import java.time.LocalDate
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -390,7 +391,7 @@ fun PersonListCard(
                         }
                         person.phoneNumber?.let { ph ->
                             Text(
-                                text = ph,
+                                text = PiiMasker.maskPhoneNumber(ph),
                                 style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
