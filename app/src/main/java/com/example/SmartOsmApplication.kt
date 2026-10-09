@@ -5,6 +5,9 @@ import android.util.Log
 import com.example.data.AppContainer
 import com.example.data.firestore.FirestoreManager
 import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
+import com.google.firebase.BuildConfig
 
 class SmartOsmApplication : Application() {
     lateinit var container: AppContainer
@@ -17,6 +20,9 @@ class SmartOsmApplication : Application() {
             if (FirebaseApp.getApps(this).isEmpty()) {
                 FirebaseApp.initializeApp(this)
             }
+            FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance()
+            )
             FirestoreManager.initialize(this)
             
             // Ensure Firebase Auth session is active for Firestore security rules
